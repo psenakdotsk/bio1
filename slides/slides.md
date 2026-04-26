@@ -61,3 +61,6 @@ layout: two-cols
 ::right::
 <img src="/nn.png" class="ml-16 w-150" />
 
+---
+
+<NeuralNet />
