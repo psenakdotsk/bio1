@@ -52,6 +52,7 @@ transition: slide-down
 
 ---
 layout: two-cols
+transition: slide-up
 ---
 
 # Ako funguje AI (velmi zjednodušene)
@@ -62,5 +63,44 @@ layout: two-cols
 <img src="/nn.png" class="ml-16 w-150" />
 
 ---
+src: ./pages/inference.md
+transition: slide-down
+---
 
-<NeuralNet />
+---
+layout: center
+---
+
+<h1 class="text-center">Tento proces ale stojí vela energie*</h1>
+<p class="text-xs text-center">* podľa velkosti modelu, pri modeloch ako GPT-5.4 z ChatGPT stojí vela energie</p>
+
+---
+
+# Energia
+
+- AI beží (takmer vždy) v dátových centrách
+- Každý prompt = výpočty (podobné ako sme si ukázali len s ešte viac vecmi)
+- Podla výskumu od Microsoft Research (2025) - Energy Use of AI Inference: Efficiency Pathways and Test-Time Compute, jeden prompt je približne 0.34Wh (1224 joulov)
+- Toto ale závisí podľa velkosti modelu a velkosti promptu
+- O tomto rozpráva výskum TokenPowerBench od <span class="text-xs">Chenxu Niu, Wei Zhang, Jie Li, Yongjian Zhao, Tongyang Wang, Xi Wang, Yong Chen (2025)</span>
+
+---
+
+# Voda
+
+- Keďže existuje zákon zachovania energie, energia z hardvéru serverov sa premieňa na teplo, a datacentrá nechcú aby sa servery pokazili od prehrievania musia ich chladiť
+- Najefektívnejšia a zároveň lacná metóda na chladenie vo velkostí týchto datacentier je vodné chladenie a odparovacie chladiace systémy (cooling towers)
+- Voda sa používa na odvádzanie tepla, ktoré vzniká pri výpočtoch
+
+---
+
+# Prečo je to problém
+
+- Na chladenie sa vela krát používa upravená mestská voda (kvalitou podobná pitnej vode)
+- Problém prichádza s tým že táto voda sa potom vyparuje do atmosféry
+- Tam problém prichádza s tým že keď sa vyparí pitná voda, dostane sa do kolobehu vody a nemusí sa dostať naspäť do pitného zdroja, čo spôsobí stratu pitnej vody
+- Pri velkom škálovaní ide o velmi významné množstvo vody
+
+---
+
+# Trochu matematiky
