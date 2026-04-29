@@ -81,8 +81,16 @@ layout: center
 - AI beží (takmer vždy) v dátových centrách
 - Každý prompt = výpočty (podobné ako sme si ukázali len s ešte viac vecmi)
 - Podla výskumu od Microsoft Research (2025) - Energy Use of AI Inference: Efficiency Pathways and Test-Time Compute, jeden prompt je približne 0.34Wh (1224 joulov)
+
+---
+
+# Energia
+
 - Toto ale závisí podľa velkosti modelu a velkosti promptu
 - O tomto rozpráva výskum TokenPowerBench od <span class="text-xs">Chenxu Niu, Wei Zhang, Jie Li, Yongjian Zhao, Tongyang Wang, Xi Wang, Yong Chen (2025)</span>
+- Hovorí o tom od čoho závisí energia minutá pri používaní LLM
+- Hlavne ale hovorí o jednotke J/token (jouly na token)
+- Toto je asi hlavná jednotka na meranie energetickej efektivity pri AI modeloch
 
 ---
 
