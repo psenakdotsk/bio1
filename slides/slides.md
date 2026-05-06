@@ -21,15 +21,23 @@ Ján Pšenák
 ---
 
 # Úvod
+<v-clicks>
+
 - AI dnes najdeme všade
-- Jeden z hlavných problémov je ale chladenie, na ktoré sa používa voda
+- Jeden z hlavných problémov je ale chladenie, na ktoré sa používa voda 
 - Otázka ktorú som chcel zodpovedať bola: Koľko vody míňame použivaním AI? Je to také zlé ako všetci hovoria že to je?
 
+</v-clicks>
 ---
 
 # Čo je to LLM
+
+<v-clicks>
+
 - LLM (Large Language Model) je podkategória umelej inteligencie na generovanie textu
 - Nájdeme ho v aplikáciach ako ChatGPT, Claude, Gemini, ale dokonca aj Google, Gmail, Spotify, sociálne siete a iné aplikácie.
+
+</v-clicks>
 
 ---
 transition: slide-up
@@ -99,6 +107,7 @@ layout: center
 - Keďže existuje zákon zachovania energie, energia z hardvéru serverov sa premieňa na teplo, a datacentrá nechcú aby sa servery pokazili od prehrievania musia ich chladiť
 - Najefektívnejšia a zároveň lacná metóda na chladenie vo veľkostí týchto datacentier je vodné chladenie a odparovacie chladiace systémy (cooling towers)
 - Voda sa používa na odvádzanie tepla, ktoré vzniká pri výpočtoch
+- Na meranie efektivity sa využíva veličina WUE (Water Usage Effectiveness), vypočítava sa vzorcom $WUE = \frac{Využitá \; voda}{Využitá \; energia}$
 
 ---
 
@@ -141,3 +150,36 @@ $E = P \cdot \frac{N_{tok}}{r_{tok}}$
 
 ---
 
+# Trochu matematiky
+
+Na výpočet využitej vody vieme vynásobiť hodnotu WUE AI datacentra energiou pri generovaní. Podľa Datacenter Knowledge, priemerné WUE pre veľké datacentrá je 1.8L/kWh. To je 0.0018L/Wh
+
+Teraz ak chceme získať počet litrov vody urobíme to takto.
+
+$Voda = P \cdot \frac{N_{tok}}{r_{tok}} \cdot 0.0018$
+
+---
+
+# Trochu matematiky
+
+Ešte ale nemáme zodpovedanú otázku čo je $P$.
+
+<span v-click class="text-center">
+
+$P$ je energia generovaná grafickou kartou, v tomto prípade vo wattoch. Pri grafickej karte Nvidia H100 SXM, často využívanej pri AI modeloch, je energia 600-680W. Ako priemer si zoberieme `650W`
+
+</span>
+---
+
+# Trochu matematiky
+
+<span>S týmto si vieme urobiť nasledujúce vzorce na počítanie energie a minutej vody</span>
+
+$E = 650 \cdot \frac{N_{tok}}{r_{tok}}$
+
+$Voda = 650 \cdot \frac{N_{tok}}{r_{tok}} \cdot 0.0018$
+
+---
+
+# Zdroje
+- [https://www.datacenterknowledge.com/cooling/a-guide-to-data-center-water-usage-effectiveness-wue-and-best-practices](https://www.datacenterknowledge.com/cooling/a-guide-to-data-center-water-usage-effectiveness-wue-and-best-practices)
