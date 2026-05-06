@@ -23,7 +23,7 @@ Ján Pšenák
 # Úvod
 - AI dnes najdeme všade
 - Jeden z hlavných problémov je ale chladenie, na ktoré sa používa voda
-- Otázka ktorú som chcel zodpovedať bola: Kolko vody míňame použivaním AI? Je to také zlé ako všetci hovoria že to je?
+- Otázka ktorú som chcel zodpovedať bola: Koľko vody míňame použivaním AI? Je to také zlé ako všetci hovoria že to je?
 
 ---
 
@@ -35,7 +35,7 @@ Ján Pšenák
 transition: slide-up
 ---
 
-# Ako funguje AI (velmi zjednodušene)
+# Ako funguje AI (veľmi zjednodušene)
 
 - Prvý krok je tzv. tokenizácia.
 - Tokenizácia je proces delenia textu na tzv. tokeny a čislovanie ich (čísluje ich lebo AI je v skutočnosti velký matematický príklad)
@@ -45,7 +45,7 @@ transition: slide-up
 transition: slide-down
 ---
 
-# Ako funguje AI (velmi zjednodušene)
+# Ako funguje AI (veľmi zjednodušene)
 ### (demo tokenizácie)
 
 <span><Token :index="4421">Token</Token><Token :index="482">iz</Token><Token :index="75413">ácia</Token><Token :index="4725"> nie</Token><Token :index="1264"> je</Token><Token :index="316"> to</Token><Token :index="2496"> ist</Token><Token :index="377">é</Token><Token :index="20267"> ako</Token><Token :index="18203"> roz</Token><Token :index="72340">delen</Token><Token :index="396">ie</Token><Token :index="898"> na</Token><Token :index="1925"> sl</Token><Token :index="49271">ová</Token><Token :index="13">.</Token></span>
@@ -55,7 +55,7 @@ layout: two-cols
 transition: slide-up
 ---
 
-# Ako funguje AI (velmi zjednodušene)
+# Ako funguje AI (veľmi zjednodušene)
 
 - Ďalej tokeny prechádzajú cez neurónovú sieť generujúcu text
 
@@ -72,7 +72,7 @@ layout: center
 ---
 
 <h1 class="text-center">Tento proces ale stojí vela energie*</h1>
-<p class="text-xs text-center">* podľa velkosti modelu, pri modeloch ako GPT-5.4 z ChatGPT stojí vela energie</p>
+<p class="text-xs text-center">* podľa veľkosti modelu, pri modeloch ako GPT-5.4 z ChatGPT stojí vela energie</p>
 
 ---
 
@@ -86,7 +86,7 @@ layout: center
 
 # Energia
 
-- Toto ale závisí podľa velkosti modelu a velkosti promptu
+- Toto ale závisí podľa veľkosti modelu a veľkosti promptu
 - O tomto rozpráva výskum TokenPowerBench od <span class="text-xs">Chenxu Niu, Wei Zhang, Jie Li, Yongjian Zhao, Tongyang Wang, Xi Wang, Yong Chen (2025)</span>
 - Hovorí o tom od čoho závisí energia minutá pri používaní LLM
 - Hlavne ale hovorí o jednotke J/token (jouly na token)
@@ -97,18 +97,47 @@ layout: center
 # Voda
 
 - Keďže existuje zákon zachovania energie, energia z hardvéru serverov sa premieňa na teplo, a datacentrá nechcú aby sa servery pokazili od prehrievania musia ich chladiť
-- Najefektívnejšia a zároveň lacná metóda na chladenie vo velkostí týchto datacentier je vodné chladenie a odparovacie chladiace systémy (cooling towers)
+- Najefektívnejšia a zároveň lacná metóda na chladenie vo veľkostí týchto datacentier je vodné chladenie a odparovacie chladiace systémy (cooling towers)
 - Voda sa používa na odvádzanie tepla, ktoré vzniká pri výpočtoch
 
 ---
 
 # Prečo je to problém
 
-- Na chladenie sa vela krát používa upravená mestská voda (kvalitou podobná pitnej vode)
+- Na chladenie sa velakrát používa upravená mestská voda (kvalitou podobná pitnej vode)
 - Problém prichádza s tým že táto voda sa potom vyparuje do atmosféry
 - Tam problém prichádza s tým že keď sa vyparí pitná voda, dostane sa do kolobehu vody a nemusí sa dostať naspäť do pitného zdroja, čo spôsobí stratu pitnej vody
-- Pri velkom škálovaní ide o velmi významné množstvo vody
+- Pri velkom škálovaní ide o veľmi významné množstvo vody
 
 ---
 
 # Trochu matematiky
+
+Začneme zakladným príkladom na výpočet energie
+
+
+$E = P \cdot t$
+- E = energia (Wh)
+- P = výkon grafickej karty (W)
+- t = čas výpočtu (h)
+
+---
+
+# Trochu matematiky
+
+Čas závisí od počtu tokenov
+
+$t = \frac{N_{tok}}{r_{tok}}$
+- $N_{tok} = počet tokenov v správe
+- $r_{tok}$ = rýchlosť spracovania (tokeny za hodinu)
+
+---
+
+# Trochu matematiky
+
+Toto spojíme do vzorcai
+
+$E = P \cdot \frac{N_{tok}}{r_{tok}}$
+
+---
+
