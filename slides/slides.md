@@ -10,6 +10,7 @@ drawings:
   persist: false
 # slide transition: https://sli.dev/guide/animations.html#slide-transitions
 transition: fade
+hideInToc: true
 ---
 
 # AI a životné prostredie
@@ -17,6 +18,12 @@ Ján Pšenák
 
 <div class="absolute bottom-6 right-6">8. ročník, SZŠ Edulienka 2025/26</div>
 <img class="absolute bottom-6 left-6 rounded-3xl w-20" src="/elogo.png" />
+
+---
+
+# Obsah
+
+<Toc columns="3" />
 
 ---
 
@@ -28,6 +35,7 @@ Ján Pšenák
 - Otázka ktorú som chcel zodpovedať bola: Koľko vody míňame použivaním AI? Je to také zlé ako všetci hovoria že to je?
 
 </v-clicks>
+
 ---
 
 # Čo je to LLM
@@ -51,6 +59,7 @@ transition: slide-up
 
 ---
 transition: slide-down
+hideInToc: true
 ---
 
 # Ako funguje AI (veľmi zjednodušene)
@@ -61,6 +70,7 @@ transition: slide-down
 ---
 layout: two-cols
 transition: slide-up
+hideInToc: true
 ---
 
 # Ako funguje AI (veľmi zjednodušene)
@@ -91,6 +101,8 @@ layout: center
 - Podla výskumu od Microsoft Research (2025) - Energy Use of AI Inference: Efficiency Pathways and Test-Time Compute, jeden prompt je približne 0.34Wh (1224 joulov)
 
 ---
+hideInToc: true
+---
 
 # Energia
 
@@ -114,8 +126,8 @@ layout: center
 # Prečo je to problém
 
 - Na chladenie sa velakrát používa upravená mestská voda (kvalitou podobná pitnej vode)
-- Problém prichádza s tým že táto voda sa potom vyparuje do atmosféry
-- Tam problém prichádza s tým že keď sa vyparí pitná voda, dostane sa do kolobehu vody a nemusí sa dostať naspäť do pitného zdroja, čo spôsobí stratu pitnej vody
+- Problém nastáva s tým že táto voda sa potom vyparuje do atmosféry
+- Tam problém nastáva s tým že keď sa vyparí pitná voda, dostane sa do kolobehu vody a nemusí sa dostať naspäť do pitného zdroja, čo spôsobí stratu pitnej vody
 - Pri velkom škálovaní ide o veľmi významné množstvo vody
 
 ---
@@ -131,6 +143,8 @@ $E = P \cdot t$
 - t = čas výpočtu (h)
 
 ---
+hideInToc: true
+---
 
 # Trochu matematiky
 
@@ -141,23 +155,29 @@ $t = \frac{N_{tok}}{r_{tok}}$
 - $r_{tok}$ = rýchlosť spracovania (tokeny za hodinu)
 
 ---
-
-# Trochu matematiky
-
-Toto spojíme do vzorcai
-
-$E = P \cdot \frac{N_{tok}}{r_{tok}}$
-
+hideInToc: true
 ---
 
 # Trochu matematiky
 
-Na výpočet využitej vody vieme vynásobiť hodnotu WUE AI datacentra energiou pri generovaní. Podľa Datacenter Knowledge, priemerné WUE pre veľké datacentrá je 1.8L/kWh. To je 0.0018L/Wh
+Toto spojíme do vzorca
+
+$E = P \cdot \frac{N_{tok}}{r_{tok}}$
+
+---
+hideInToc: true
+---
+
+# Trochu matematiky
+
+Na výpočet využitej vody vieme vynásobiť hodnotu WUE AI datacentra energiou pri generovaní. Podľa Datacenter Knowledge, priemerné WUE pre veľké "hyperscale" dátové centrá je približne 1.8 L/kWh. To je 0.0018L/Wh
 
 Teraz ak chceme získať počet litrov vody urobíme to takto.
 
 $Voda = P \cdot \frac{N_{tok}}{r_{tok}} \cdot 0.0018$
 
+---
+hideInToc: true
 ---
 
 # Trochu matematiky
@@ -169,6 +189,9 @@ Ešte ale nemáme zodpovedanú otázku čo je $P$.
 $P$ je energia generovaná grafickou kartou, v tomto prípade vo wattoch. Pri grafickej karte Nvidia H100 SXM, často využívanej pri AI modeloch, je energia 600-680W. Ako priemer si zoberieme `650W`
 
 </span>
+
+---
+hideInToc: true
 ---
 
 # Trochu matematiky
@@ -178,6 +201,18 @@ $P$ je energia generovaná grafickou kartou, v tomto prípade vo wattoch. Pri gr
 $E = 650 \cdot \frac{N_{tok}}{r_{tok}}$
 
 $Voda = 650 \cdot \frac{N_{tok}}{r_{tok}} \cdot 0.0018$
+
+---
+
+<span class="text-center">
+
+# POZOR! Toto nevypočíta presné číslo, ale vypočíta to len odhad
+
+</span>
+
+---
+
+...
 
 ---
 
