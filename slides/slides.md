@@ -1,14 +1,8 @@
 ---
-# try also 'default' to start simple
 theme: eloc
-# random image from a curated Unsplash collection by Anthony
-# like them? see https://unsplash.com/collections/94734566/slidev
-# some information about your slides (markdown enabled)
 title: AI a životné prostredie
-# https://sli.dev/features/drawing
 drawings:
   persist: false
-# slide transition: https://sli.dev/guide/animations.html#slide-transitions
 transition: fade
 hideInToc: true
 ---
@@ -38,12 +32,39 @@ Ján Pšenák
 
 ---
 
+# Prečo som si vybral tému
+
+- Keďže AI tu využíva takmer každý a AI má skrytú cenu v enviromentalistike, prišlo mi ako dôležité na to poukázať
+
+---
+# Pôvod problému
+
+- Každý jeden výpočet v čípoch premieňa elektrickú energiu na teplo
+- Toto teplo sa musí z čípu odviesť preč, inak by sa roztavil.
+- Pre firmy je lacnejšie vodu vypariť do vzduchu a kúpiť ďalšiu, než investovať do drahých systémov ktoré ju točia dookola využívajúc stále tú istú vodu
+
+---
+
+# Vzorka (alebo koho/čo to ovplyvňuje)
+
+<v-clicks>
+
+- Ľudia v oblastiach blízko datacentier
+  - V meste The Dalles, Oregon má Google datacentrá, ktoré spotrebúvajú **tretinu** celkovej vody mesta
+  - Predpokladá sa že do 2036 ceny vody im narastú o 99% od 2024
+- Príroda
+  - Keďže datacentrá využívajú takéto veľké množstvá vody, môže oslabovať lokálne vodné ekosystémy
+
+</v-clicks>
+
+---
+
 # Čo je to LLM
 
 <v-clicks>
 
 - LLM (Large Language Model) je podkategória umelej inteligencie na generovanie textu
-- Nájdeme ho v aplikáciach ako ChatGPT, Claude, Gemini, ale dokonca aj Google, Gmail, Spotify, sociálne siete a iné aplikácie.
+- Nájdeme ho v aplikáciach ako ChatGPT, Claude, Gemini, ale dokonca aj Google, sociálne siete a iné aplikácie.
 
 </v-clicks>
 
@@ -97,7 +118,7 @@ layout: center
 # Energia
 
 - AI beží (takmer vždy) v dátových centrách
-- Každý prompt = výpočty (podobné ako sme si ukázali len s ešte viac vecmi)
+- Každý prompt = výpočty (podobné ako sme si ukázali len s ešte viac vecami)
 - Podla výskumu od Microsoft Research (2025) - Energy Use of AI Inference: Efficiency Pathways and Test-Time Compute, jeden prompt je približne 0.34Wh (1224 joulov)
 
 ---
@@ -129,6 +150,13 @@ hideInToc: true
 - Problém nastáva s tým že táto voda sa potom vyparuje do atmosféry
 - Tam problém nastáva s tým že keď sa vyparí pitná voda, dostane sa do kolobehu vody a nemusí sa dostať naspäť do pitného zdroja, čo spôsobí stratu pitnej vody
 - Pri velkom škálovaní ide o veľmi významné množstvo vody
+
+---
+
+# Prejavy
+
+- Ak datacentrum niekde odparí 1mil litrov vody denne, neprejaví sa to všade rovnako. Prejaví sa to hlavne miestne, kde zrazu chýba voda ktorú "vypila" AI
+- Taktiež vypúštanie teplej pary dlhodobo vie tam zmeniť klímu
 
 ---
 
@@ -198,10 +226,16 @@ hideInToc: true
 
 <span>S týmto si vieme urobiť nasledujúce vzorce na počítanie energie a minutej vody</span>
 
+<v-clicks>
+
 $E = 650 \cdot \frac{N_{tok}}{r_{tok}}$
 
 $Voda = 650 \cdot \frac{N_{tok}}{r_{tok}} \cdot 0.0018$
 
+</v-clicks>
+
+---
+hideInToc: true
 ---
 
 <span class="text-center">
@@ -213,6 +247,20 @@ $Voda = 650 \cdot \frac{N_{tok}}{r_{tok}} \cdot 0.0018$
 ---
 
 ...
+
+---
+
+# Ako to vieme riešiť?
+
+<v-clicks depth="2">
+
+- Nevieme
+- Všetko čo ide spraviť by
+    1. museli spraviť samotné datacentrá
+    2. bolo by buď veľmi drahé alebo neefektívne
+- Jediné riešenia ktoré existujú ktoré sú efektívnejšie (hlbokomorské datacentrá) ale sú peňažne drahé.
+
+</v-clicks>
 
 ---
 
