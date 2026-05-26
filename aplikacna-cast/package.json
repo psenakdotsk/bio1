@@ -37,6 +37,7 @@
 		"@orpc/client": "^1.14.3",
 		"@orpc/server": "^1.14.3",
 		"gpt-tokenizer": "^3.4.0",
+		"marked": "^18.0.4",
 		"mode-watcher": "^1.1.0",
 		"openai": "^6.37.0",
 		"zod": "^4.4.3"

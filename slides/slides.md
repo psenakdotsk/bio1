@@ -246,7 +246,11 @@ hideInToc: true
 
 ---
 
-...
+# Koľko vody to ale naozaj je?
+
+- Ako aplikačnú časť som urobil simuláciu
+- V simulácií chatujete s AI modelom (Gemma 3 4B) a počíta to dáta koľko by to spotrebovalo 
+- Potom tam dám štatistiku porovnávajúcu tvoj chat s inými vecmi čo spotrebovávajú energiu a vodu.
 
 ---
 
@@ -259,6 +263,7 @@ hideInToc: true
     1. museli spraviť samotné datacentrá
     2. bolo by buď veľmi drahé alebo neefektívne
 - Jediné riešenia ktoré existujú ktoré sú efektívnejšie (hlbokomorské datacentrá) ale sú peňažne drahé.
+- Ako jednu z mála vecí čo vieme spraviť je minimalizovať využitie velkých AI na veci kde to nie je nutné
 
 </v-clicks>
 

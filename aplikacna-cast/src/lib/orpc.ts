@@ -9,19 +9,22 @@ const openai = new OpenAI({
 
 // Globálne premenné (zostanú v pamäti Bun procesu počas tvojho dema)
 let globalWaterMl = 0
+let globalEnergy = 0
 let globalTokens = 0
 
 // Definícia procedúr
 const submitImpact = os
     .input(z.object({
         water: z.number(),
-        tokens: z.number()
+        tokens: z.number(),
+        energy: z.number()
     }))
     .handler(({ input }) => {
         globalWaterMl += input.water
         globalTokens += input.tokens
+        globalEnergy += input.energy
         
-        console.log(`Aktuálny stav: ${globalWaterMl.toFixed(2)}ml | ${globalTokens} tokenov`)
+        console.log(`Aktuálny stav: ${globalWaterMl.toFixed(2)}ml | ${globalTokens} tokenov | ${globalEnergy}Wh`)
         
         return { success: true }
     })
@@ -32,7 +35,8 @@ const getStats = os
             totalMl: globalWaterMl,
             totalTokens: globalTokens,
             // Prepočet na litre pre lepšiu predstavu na tabuli
-            totalLitres: globalWaterMl / 1000 
+            totalLitres: globalWaterMl / 1000,
+            totalWatts: globalEnergy
         }
     })
 
