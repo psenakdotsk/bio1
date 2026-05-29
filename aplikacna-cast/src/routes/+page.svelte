@@ -13,6 +13,7 @@
 
     const sysprompt: Message = { role: "system", content: `Si umelá inteligenca (veľký jazykový model) bežiaci na serveri v simulovanom dátovom centre. Užívateľ s tebou četuje cez špeciálnu aplikáciu, ktorá naživo meria tvoju spotrebu vody (WUE) a energie na základe vygenerovaných tokenov.
         Tento čet je súčasťou školskej prezentácie na tému "AI a životné prostredie" pre 8. ročník SZŠ Edulienka (autor Ján Pšenák, školský rok 2025/26).
+        Použivatel ktorý s tebou komunikuje je "consumer" prezentácie, bola mu práve prezentovaná
 
         Tvoje pravidlá správania:
             1. Komunikuj výhradne po slovensky, priateľsky a nápomocne k téme AI a ekológia. Užívateľovi tykaj.
@@ -20,8 +21,8 @@
             3. Ak sa užívateľ pýta na fakty, teóriu alebo matematiku, drž sa striktne informácií z prezentácie (kontext nižšie).
 
         DÁTA A VZORCE Z PREZENTÁCIE:
-        - Výkon simulovaného GPU (Nvidia H100 SXM): \${P}W (priemer 650W, premieňa elektrinu na teplo, inak by sa roztavil).
-        - WUE (Water Usage Effectiveness): \${WUE} L/Wh (priemerné WUE pre veľké "hyperscale" dátové centrá je 1.8 L/kWh, čo je 0.0018 L/Wh). Vzorec: WUE = Využitá voda / Využitá energia.
+        - Výkon simulovaného GPU (Nvidia H100 SXM): ${P}W (priemer 650W, premieňa elektrinu na teplo, inak by sa roztavil).
+        - WUE (Water Usage Effectiveness): ${WUE} L/Wh (priemerné WUE pre veľké "hyperscale" dátové centrá je 1.8 L/kWh, čo je 0.0018 L/Wh). Vzorec: WUE = Využitá voda / Využitá energia.
         - Výpočet energie: E = P * t (energia = výkon * čas).
         - Výpočet času: t = N_tok / r_tok (počet tokenov v správe / rýchlosť spracovania).
         - Výpočet vody: Voda = P * (N_tok / r_tok) * 0.0018.
@@ -40,7 +41,7 @@
         INFO O TEBE:
         - Si Gemma 3 4B
         - Tvoje datacentrum je simulované, v skutočnosti bežíš na počítači v Bratislave na RTX 4060 a 32GB ram, ak sa ťa niekto spýta ohľadom datacentra, neexistuje, je simulované podľa dát priemerných datacentier.
-        - Tvoj reálny domáci hardvér v tejto chvíli žiadnu vodu nemíňa – chladí sa klasicky vzduchom (aircoolingom) pomocou ventilátorov v case v spálni tvorcu tejto apky (len tak ako fun fact).
+        - Tvoj reálny domáci hardvér v tejto chvíli žiadnu vodu nemíňa – chladí sa klasicky vzduchom (aircoolingom) pomocou ventilátorov v case počítača.
 
         Prezentáciu vytvoril Ján Pšenák zo školy SZŠ Edulienka` };
     
@@ -122,15 +123,32 @@
 
     import ImageGrid from "$lib/components/ImageGrid.svelte"
 
-    function formatLiquidVolume(ml) {
+    function formatNumberString(numstr: string) {
+        const numarr = numstr.split("").reverse()
+        const newArr = []
+
+        let n = 0;
+        let decimal = true
+        for(const numi in numarr) {
+            if(!decimal) n++;
+            const num = numarr[numi]
+            newArr.unshift(num)
+            if(num===".") decimal = false;
+            if(n===3 && !decimal && numarr[+numi+1] !== ".") {
+                n=0
+                newArr.unshift(" ")
+            }
+        }
+
+        return newArr.join("")
+    }
+
+    function formatLiquidVolume(ml: number) {
   const units = [
     { name: "l", value: 1_000 },                  // liter
     { name: "dl", value: 100 },                   // deciliter
     { name: "cl", value: 10 },                    // centiliter
     { name: "ml", value: 1 },                     // milliliter
-    { name: "μl", value: 0.001 },                 // microliter
-    { name: "nl", value: 0.000001 },              // nanoliter
-    { name: "pl", value: 0.000000001 },           // picoliter
   ];
 
   const abs = Math.abs(ml);
@@ -140,7 +158,24 @@
 
   const converted = ml / unit.value;
 
-  return `${Number(converted.toFixed(2))} ${unit.name}`;
+  return `${formatNumberString(converted.toFixed(2))} ${unit.name}`;
+}
+
+function formatEnergy(wh: number) {
+  let unit = "Wh"
+  if(wh > 100) {
+        wh /= 1000
+        unit = "kWh"
+    }
+
+  return `${formatNumberString(wh.toFixed(2))} ${unit}`;
+}
+
+function deleteChat() {
+    localStorage.removeItem("my_convo_5.4")
+    localStorage.removeItem("my_impact_5.4")
+    localStorage.removeItem("my_energy_5.4")
+    location.reload()
 }
 </script>
 
@@ -167,15 +202,19 @@
 
 <br><br>
 
+{#if myEnergyTotal === 0 || myLocalTotal === 0}
+    <p class="text-muted-foreground italic">Napíš prvú správu pre výpočet porovnaní...</p>
+{:else}
+
 <h1 class="text-3xl font-bold">A koľko by si spotreboval pri ChatGPT?</h1><br>
 <table class="gap-4 w-full">
     <tbody><tr>
         <td class="text-center">
-            <b class="text-lg">{myEnergyTotal.toFixed(1)} Wh</b>
+            <b class="text-lg">{formatEnergy(myEnergyTotal)}</b>
             <p>spotrebovanej energie</p>
         </td>
         <td class="text-center">
-            <b class="text-lg">{myLocalTotal.toFixed(1)} ml</b>
+            <b class="text-lg">{formatLiquidVolume(myLocalTotal)}</b>
             <p>spotrebovanej vody</p>
         </td>
     </tr></tbody>
@@ -185,3 +224,50 @@
 <p>ChatGPT má približne 200 000 000 použivateľov <b>denne.</b></p>
 <p>Keby každý z nich mal tento chat s ChatGPT vyšlo by to spolu na <b>{formatLiquidVolume(myLocalTotal * 200000000)}</b></p>
 
+<br>
+
+<h1 class="text-3xl font-bold">To je velké číslo, ale koľko to je naozaj?</h1><br>
+
+    <p>Priemerný slovák vypije 2l vody denne. 
+        {#if myLocalTotal / 2000 < 1}
+            Na to potrebuješ vodu z {(2000 / myLocalTotal).toFixed(0)} takýchto chatov.
+        {:else}
+            Týmto jedným chatom pokryješ denný pitný režim človeka až {formatNumberString((myLocalTotal / 2000).toFixed(2))}x.
+        {/if}
+    </p>
+    <br>
+
+    <p>Jeden cyklus práčky spotrebuje približne 0.50kWh elektriny. 
+        {#if myEnergyTotal / 500 < 1}
+            Na dosiahnutie tejto energie potrebuješ {(500 / myEnergyTotal).toFixed(0)} takýchto chatov.
+        {:else}
+            Týmto chatom vygeneruješ energiu na {formatNumberString((myEnergyTotal / 500).toFixed(2))}x celých cyklov prania.
+        {/if}
+    </p>
+    <br>
+
+    <p>Jeden cyklus práčky minie približne 45l vody. 
+        {#if myLocalTotal / 45000 < 1}
+            Na minutie rovnakého množstva vody potrebuješ {(45000 / myLocalTotal).toFixed(0)} takýchto chatov.
+        {:else}
+            Týmto chatom odparíš vodu, ktorá by stačila na {formatNumberString((myLocalTotal / 45000).toFixed(2))}x vypratých práčok.
+        {/if}
+    </p>
+    <br>
+
+    <p>iPhone 17 nabiješ 
+        {#if myEnergyTotal / 14.3 < 1}
+            energiou z {(14.3 / myEnergyTotal).toFixed(1)} takýchto chatov.
+        {:else}
+            {formatNumberString((myEnergyTotal / 14.3).toFixed(2))}x pomocou energie z tohto chatu.
+        {/if}
+    </p>
+
+    <p></p>
+
+    <br>
+    <hr>
+    <br><br>
+
+    <Button onclick={deleteChat}>Zmazať chat</Button>
+{/if}

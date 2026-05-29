@@ -11,8 +11,10 @@ hideInToc: true
 Ján Pšenák
 
 <div class="absolute bottom-6 right-6">8. ročník, SZŠ Edulienka 2025/26</div>
-<img class="absolute bottom-6 left-6 rounded-3xl w-20" src="/elogo.png" />
+<img class="absolute bottom-6 left-6 rounded-3xl w-20" src="/elogo.png" alt="school logo" />
 
+---
+hideInToc: true
 ---
 
 # Obsah
@@ -47,15 +49,18 @@ Ján Pšenák
 
 # Vzorka (alebo koho/čo to ovplyvňuje)
 
-<v-clicks>
-
 - Ľudia v oblastiach blízko datacentier
   - V meste The Dalles, Oregon má Google datacentrá, ktoré spotrebúvajú **tretinu** celkovej vody mesta
   - Predpokladá sa že do 2036 ceny vody im narastú o 99% od 2024
+
+---
+hideInToc: true
+---
+
+# Vzorka (alebo koho/čo to ovplyvňuje)
+
 - Príroda
   - Keďže datacentrá využívajú takéto veľké množstvá vody, môže oslabovať lokálne vodné ekosystémy
-
-</v-clicks>
 
 ---
 
@@ -253,6 +258,13 @@ hideInToc: true
 - Potom tam dám štatistiku porovnávajúcu tvoj chat s inými vecmi čo spotrebovávajú energiu a vodu.
 
 ---
+layout: center
+---
+
+<img src="https://api.qrserver.com/v1/create-qr-code/?size=500x500&data=https://dw11.fish-rankine.ts.net/" alt="">
+<p class="text-center font-bold">dw11.fish-rankine.ts.net</p>
+
+---
 
 # Ako to vieme riešiť?
 
@@ -271,3 +283,12 @@ hideInToc: true
 
 # Zdroje
 - [https://www.datacenterknowledge.com/cooling/a-guide-to-data-center-water-usage-effectiveness-wue-and-best-practices](https://www.datacenterknowledge.com/cooling/a-guide-to-data-center-water-usage-effectiveness-wue-and-best-practices)
+
+---
+hideInToc: true
+---
+
+# Zdroje (aplikačná časť)
+- https://www.watersolutions.sk/info/spotreba-vody-na-slovensku/
+- https://www.demandsage.com/chatgpt-statistics/
+- https://www.digitaltrends.com/phones/iphone-17-charging-speeds/
