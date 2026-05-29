@@ -1,5 +1,5 @@
 ---
-theme: eloc
+theme: default
 title: AI a životné prostredie
 drawings:
   persist: false
@@ -26,9 +26,9 @@ hideInToc: true
 # Úvod
 <v-clicks>
 
-- AI dnes najdeme všade
-- Jeden z hlavných problémov je ale chladenie, na ktoré sa používa voda 
-- Otázka ktorú som chcel zodpovedať bola: Koľko vody míňame použivaním AI? Je to také zlé ako všetci hovoria že to je?
+- AI dnes nájdeme všade
+- Jeden z hlavných problémov je chladenie, pri ktorom sa používa voda 
+- Otázka ktorú som chcel zodpovedať, bola: Koľko vody míňame použivaním AI? Je to také zlé ako všetci hovoria že to je?
 
 </v-clicks>
 
@@ -151,10 +151,10 @@ hideInToc: true
 
 # Prečo je to problém
 
-- Na chladenie sa velakrát používa upravená mestská voda (kvalitou podobná pitnej vode)
+- Na chladenie sa veľakrát používa upravená mestská voda (kvalitou podobná pitnej vode)
 - Problém nastáva s tým že táto voda sa potom vyparuje do atmosféry
 - Tam problém nastáva s tým že keď sa vyparí pitná voda, dostane sa do kolobehu vody a nemusí sa dostať naspäť do pitného zdroja, čo spôsobí stratu pitnej vody
-- Pri velkom škálovaní ide o veľmi významné množstvo vody
+- Pri veľkom škálovaní ide o veľmi významné množstvo vody
 
 ---
 
@@ -241,11 +241,12 @@ $Voda = 650 \cdot \frac{N_{tok}}{r_{tok}} \cdot 0.0018$
 
 ---
 hideInToc: true
+layout: center
 ---
 
 <span class="text-center">
 
-# POZOR! Toto nevypočíta presné číslo, ale vypočíta to len odhad
+# **POZOR! Toto nevypočíta presné číslo, ale vypočíta to len odhad**
 
 </span>
 
@@ -258,10 +259,42 @@ hideInToc: true
 - Potom tam dám štatistiku porovnávajúcu tvoj chat s inými vecmi čo spotrebovávajú energiu a vodu.
 
 ---
+
+# Zopár štatistík pre porovnanie
+
+- Jeden človek bežne vypije 2l vody za deň.
+- Celková denná spotreba priemerného Slováka je asi 100l
+- Z toho osobná hygiena a splachovanie WC je 70l
+- Olympíjsky bazén ma objem asi 2.5mil litra vody
+- Na vypestovanie 1kg ryže sa spotrebuje 3000l vody
+- Na produkciu 1kg mäsa sa spotrebuje asi 16000l vody
+- Na 10 jabĺk sa spotrebuje asi 700l vody
+
+---
+
+# Koľko je jedno `ahoj!`
+
+- V našej simulácií spotrebuje 0.11 Wh energie, a 0,19 ml vody
+- Pri 200 miliónoch použivateľoch denne (približne koľko má ChatGPT) je to 38 480 l vody
+- To by pokrylo približne polovicu toho čo by vypili ľudia v Karlovej Vsi za deň
+- Priemerný slovák by si s touto vodou vystačil na rok aj s hygienou
+- Dali by sa s tým naplniť až 2 stredne velké rodinné bazény (priemer asi 5m a hĺbku 1m)
+- Dala by sa uvariť šálka kávy pre každého Petržálčana a Staromešťana
+
+---
 layout: center
 ---
 
-<img src="https://api.qrserver.com/v1/create-qr-code/?size=500x500&data=https://dw11.fish-rankine.ts.net/" alt="">
+# Na svete zomiera podľa WHO asi 1 milión ľudí na následky nedostatku pitnej vody.
+Z toho je takmer 400 000 detí do 5 rokov (asi 1100 každý deň)
+
+- Teraz si to predstavte v kontexte toho, že jedno `ahoj` od každého použivateľa minie spolu 38 480l vody 
+
+---
+layout: center
+---
+
+<img src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=https://dw11.fish-rankine.ts.net" alt="">
 <p class="text-center font-bold">dw11.fish-rankine.ts.net</p>
 
 ---
@@ -274,7 +307,8 @@ layout: center
 - Všetko čo ide spraviť by
     1. museli spraviť samotné datacentrá
     2. bolo by buď veľmi drahé alebo neefektívne
-- Jediné riešenia ktoré existujú ktoré sú efektívnejšie (hlbokomorské datacentrá) ale sú peňažne drahé.
+- Jediné riešenia ktoré existujú ktoré sú efektívnejšie (hlbokomorské datacentrá) sú peňažne drahé.
+- Najjednoduchšie a najlacnejšie riešenie zo strany datacentier je využívať nepitnú vodu (niektoré to už robia)
 - Ako jednu z mála vecí čo vieme spraviť je minimalizovať využitie velkých AI na veci kde to nie je nutné
 
 </v-clicks>
@@ -283,12 +317,8 @@ layout: center
 
 # Zdroje
 - [https://www.datacenterknowledge.com/cooling/a-guide-to-data-center-water-usage-effectiveness-wue-and-best-practices](https://www.datacenterknowledge.com/cooling/a-guide-to-data-center-water-usage-effectiveness-wue-and-best-practices)
-
----
-hideInToc: true
----
-
-# Zdroje (aplikačná časť)
 - https://www.watersolutions.sk/info/spotreba-vody-na-slovensku/
 - https://www.demandsage.com/chatgpt-statistics/
 - https://www.digitaltrends.com/phones/iphone-17-charging-speeds/
+- https://sk.factory-water-fountain-equipment.com/info/standard-dimensions-of-international-swimming-31829358.html
+- https://www.activesustainability.com/water/do-you-know-your-water-footprint-7-pieces-of-curious-data-about-water-usage

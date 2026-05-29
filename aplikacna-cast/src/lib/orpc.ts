@@ -11,6 +11,7 @@ const openai = new OpenAI({
 let globalWaterMl = 0
 let globalEnergy = 0
 let globalTokens = 0
+let users = 0
 
 // Definícia procedúr
 const submitImpact = os
@@ -34,9 +35,8 @@ const getStats = os
         return {
             totalMl: globalWaterMl,
             totalTokens: globalTokens,
-            // Prepočet na litre pre lepšiu predstavu na tabuli
-            totalLitres: globalWaterMl / 1000,
-            totalWatts: globalEnergy
+            totalWatts: globalEnergy,
+            totalUsers: users
         }
     })
 
@@ -59,10 +59,16 @@ const sendChat = os
         yield* stream
     })
 
+const addUser = os
+    .handler(() => {
+        users++;
+    })
+
 const router = {
     submitImpact,
     getStats,
-    sendChat
+    sendChat,
+    addUser
 }
 
 export default router
