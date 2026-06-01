@@ -1,10 +1,11 @@
 ---
-theme: default
+theme: academic
 title: AI a životné prostredie
 drawings:
   persist: false
 transition: fade
 hideInToc: true
+coverDate: 
 ---
 
 # AI a životné prostredie
@@ -28,22 +29,29 @@ hideInToc: true
 
 - AI dnes nájdeme všade
 - Jeden z hlavných problémov je chladenie, pri ktorom sa používa voda 
-- Otázka ktorú som chcel zodpovedať, bola: Koľko vody míňame použivaním AI? Je to také zlé ako všetci hovoria že to je?
+- Otázka ktorú som chcel zodpovedať, bola: Koľko vody míňame používaním AI? Je to také zlé, ako všetci hovoria, že to je?
 
 </v-clicks>
+
 
 ---
 
 # Prečo som si vybral tému
 
-- Keďže AI tu využíva takmer každý a AI má skrytú cenu v enviromentalistike, prišlo mi ako dôležité na to poukázať
+- Keďže AI tu využíva takmer každý a AI má skrytú cenu v environmentalistike, prišlo mi, ako dôležité na to poukázať
 
 ---
+
 # Pôvod problému
 
-- Každý jeden výpočet v čípoch premieňa elektrickú energiu na teplo
-- Toto teplo sa musí z čípu odviesť preč, inak by sa roztavil.
-- Pre firmy je lacnejšie vodu vypariť do vzduchu a kúpiť ďalšiu, než investovať do drahých systémov ktoré ju točia dookola využívajúc stále tú istú vodu
+- Každý jeden výpočet v čipoch premieňa elektrickú energiu na teplo
+- Toto teplo sa musí z čipu odviesť preč, inak by sa roztavil.
+- Pre firmy je lacnejšie vodu vypariť do vzduchu a kúpiť ďalšiu, než investovať do drahých systémov, ktoré ju točia dookola využívajúc stále tú istú vodu
+<img src="/ctower.jpg">
+
+<!--
+Obrázok je chladiaca veža
+-->
 
 ---
 
@@ -51,16 +59,11 @@ hideInToc: true
 
 - Ľudia v oblastiach blízko datacentier
   - V meste The Dalles, Oregon má Google datacentrá, ktoré spotrebúvajú **tretinu** celkovej vody mesta
-  - Predpokladá sa že do 2036 ceny vody im narastú o 99% od 2024
-
----
-hideInToc: true
----
-
-# Vzorka (alebo koho/čo to ovplyvňuje)
-
+  - Predpokladá sa, že do 2036 ceny vody im narastú o 99%
 - Príroda
   - Keďže datacentrá využívajú takéto veľké množstvá vody, môže oslabovať lokálne vodné ekosystémy
+
+<img src="/thedallesdtct.jpg" class="mt-4 ml-2 w-80">
 
 ---
 
@@ -69,7 +72,7 @@ hideInToc: true
 <v-clicks>
 
 - LLM (Large Language Model) je podkategória umelej inteligencie na generovanie textu
-- Nájdeme ho v aplikáciach ako ChatGPT, Claude, Gemini, ale dokonca aj Google, sociálne siete a iné aplikácie.
+- Nájdeme ho v aplikáciach, ako ChatGPT, Claude, Gemini, ale dokonca aj Google, sociálne siete a iné aplikácie.
 
 </v-clicks>
 
@@ -80,12 +83,13 @@ transition: slide-up
 # Ako funguje AI (veľmi zjednodušene)
 
 - Prvý krok je tzv. tokenizácia.
-- Tokenizácia je proces delenia textu na tzv. tokeny a čislovanie ich (čísluje ich lebo AI je v skutočnosti velký matematický príklad)
+- Tokenizácia je proces delenia textu na tzv. tokeny a číslovanie ich (čísluje ich lebo AI je v skutočnosti veľký matematický príklad)
 - Tokeny nie sú to isté ako slová
 
 ---
 transition: slide-down
 hideInToc: true
+layout: center
 ---
 
 # Ako funguje AI (veľmi zjednodušene)
@@ -116,14 +120,14 @@ layout: center
 ---
 
 <h1 class="text-center">Tento proces ale stojí vela energie*</h1>
-<p class="text-xs text-center">* podľa veľkosti modelu, pri modeloch ako GPT-5.4 z ChatGPT stojí vela energie</p>
+<p class="text-xs text-center">* podľa veľkosti modelu, pri modeloch, ako GPT-5.4 z ChatGPT stojí vela energie</p>
 
 ---
 
 # Energia
 
 - AI beží (takmer vždy) v dátových centrách
-- Každý prompt = výpočty (podobné ako sme si ukázali len s ešte viac vecami)
+- Každý prompt = výpočty (podobné, ako sme si ukázali len s ešte viac vecami)
 - Podla výskumu od Microsoft Research (2025) - Energy Use of AI Inference: Efficiency Pathways and Test-Time Compute, jeden prompt je približne 0.34Wh (1224 joulov)
 
 ---
@@ -147,13 +151,15 @@ hideInToc: true
 - Voda sa používa na odvádzanie tepla, ktoré vzniká pri výpočtoch
 - Na meranie efektivity sa využíva veličina WUE (Water Usage Effectiveness), vypočítava sa vzorcom $WUE = \frac{Využitá \; voda}{Využitá \; energia}$
 
+![](/voda.png)
+
 ---
 
 # Prečo je to problém
 
-- Na chladenie sa veľakrát používa upravená mestská voda (kvalitou podobná pitnej vode)
-- Problém nastáva s tým že táto voda sa potom vyparuje do atmosféry
-- Tam problém nastáva s tým že keď sa vyparí pitná voda, dostane sa do kolobehu vody a nemusí sa dostať naspäť do pitného zdroja, čo spôsobí stratu pitnej vody
+- Na chladenie sa veľakrát používa upravená mestská voda (kvalitou podobnej pitnej vode)
+- Problém nastáva s tým, že táto voda sa potom vyparuje do atmosféry
+- Tam problém nastáva s tým, že keď sa vyparí pitná voda, dostane sa do kolobehu vody a nemusí sa dostať naspäť do pitného zdroja, čo spôsobí stratu pitnej vody
 - Pri veľkom škálovaní ide o veľmi významné množstvo vody
 
 ---
@@ -161,13 +167,13 @@ hideInToc: true
 # Prejavy
 
 - Ak datacentrum niekde odparí 1mil litrov vody denne, neprejaví sa to všade rovnako. Prejaví sa to hlavne miestne, kde zrazu chýba voda ktorú "vypila" AI
-- Taktiež vypúštanie teplej pary dlhodobo vie tam zmeniť klímu
+- Taktiež vypúšťanie teplej pary dlhodobo vie tam zmeniť klímu
 
 ---
 
 # Trochu matematiky
 
-Začneme zakladným príkladom na výpočet energie
+Začneme základným príkladom na výpočet energie
 
 
 $E = P \cdot t$
@@ -184,7 +190,7 @@ hideInToc: true
 Čas závisí od počtu tokenov
 
 $t = \frac{N_{tok}}{r_{tok}}$
-- $N_{tok} = počet tokenov v správe
+- $N_{tok}$ = počet tokenov v správe
 - $r_{tok}$ = rýchlosť spracovania (tokeny za hodinu)
 
 ---
@@ -219,7 +225,7 @@ Ešte ale nemáme zodpovedanú otázku čo je $P$.
 
 <span v-click class="text-center">
 
-$P$ je energia generovaná grafickou kartou, v tomto prípade vo wattoch. Pri grafickej karte Nvidia H100 SXM, často využívanej pri AI modeloch, je energia 600-680W. Ako priemer si zoberieme `650W`
+$P$ je energia generovanou grafickou kartou, v tomto prípade vo wattoch. Pri grafickej karte Nvidia H100 SXM, často využívanej pri AI modeloch, je energia 600-680W. Ako priemer si zoberieme `650W`
 
 </span>
 
@@ -256,46 +262,83 @@ layout: center
 
 - Ako aplikačnú časť som urobil simuláciu
 - V simulácií chatujete s AI modelom (Gemma 3 4B) a počíta to dáta koľko by to spotrebovalo 
-- Potom tam dám štatistiku porovnávajúcu tvoj chat s inými vecmi čo spotrebovávajú energiu a vodu.
+- Potom tam bude štatistika porovnávajúca tvoj chat s inými vecami čo spotrebovávajú energiu a vodu.
 
 ---
 
-# Zopár štatistík pre porovnanie
+# Plán projektu
 
-- Jeden človek bežne vypije 2l vody za deň.
-- Celková denná spotreba priemerného Slováka je asi 100l
-- Z toho osobná hygiena a splachovanie WC je 70l
-- Olympíjsky bazén ma objem asi 2.5mil litra vody
-- Na vypestovanie 1kg ryže sa spotrebuje 3000l vody
-- Na produkciu 1kg mäsa sa spotrebuje asi 16000l vody
-- Na 10 jabĺk sa spotrebuje asi 700l vody
+- Keďže apka je viacmenej robenie jednej veci,  
 
 ---
+
+[//]: # ()
+[//]: # (# Zopár štatistík pre porovnanie)
+
+[//]: # ()
+[//]: # (- Jeden človek bežne vypije 2l vody za deň.)
+
+[//]: # (- Celková denná spotreba priemerného Slováka je asi 100l)
+
+[//]: # (- Z toho osobná hygiena a splachovanie WC je 70l)
+
+[//]: # (- Olympijský bazén ma objem asi 2.5mil litra vody)
+
+[//]: # (- Na vypestovanie 1kg ryže sa spotrebuje 3000l vody)
+
+[//]: # (- Na produkciu 1kg mäsa sa spotrebuje asi 16000l vody)
+
+[//]: # (- Na 10 jabĺk sa spotrebuje asi 700l vody)
+
+[//]: # ()
+[//]: # (---)
 
 # Koľko je jedno `ahoj!`
 
 - V našej simulácií spotrebuje 0.11 Wh energie, a 0,19 ml vody
-- Pri 200 miliónoch použivateľoch denne (približne koľko má ChatGPT) je to 38 480 l vody
+- Pri 200 miliónoch používateľoch denne (približne koľko má ChatGPT) je to 38 480 l vody
 - To by pokrylo približne polovicu toho čo by vypili ľudia v Karlovej Vsi za deň
 - Priemerný slovák by si s touto vodou vystačil na rok aj s hygienou
-- Dali by sa s tým naplniť až 2 stredne velké rodinné bazény (priemer asi 5m a hĺbku 1m)
-- Dala by sa uvariť šálka kávy pre každého Petržálčana a Staromešťana
+- Dali by sa s tým naplniť až 2 stredne veľké rodinné bazény (priemer asi 5m a hĺbku 1m)
+- Dali by sa uvariť 2 šálky kávy pre každého Petržálčana
+
+<!--
+Petržálka: 113000 obyvatelov
+
+1 šálka kávy: 0.15l
+
+Kolko šálok kávy: 38 480 / 0.15 = 256533
+kolko šálok na človeka 256533 / 161000 = 2
+-->
 
 ---
 layout: center
+hideInToc: true
 ---
 
 # Na svete zomiera podľa WHO asi 1 milión ľudí na následky nedostatku pitnej vody.
 Z toho je takmer 400 000 detí do 5 rokov (asi 1100 každý deň)
 
-- Teraz si to predstavte v kontexte toho, že jedno `ahoj` od každého použivateľa minie spolu 38 480l vody 
+- Teraz si to predstavte v kontexte toho, že jedno `ahoj` od každého používateľa minie spolu 38 480l vody
+
+<!--
+Jeden provokatívny slide
+-->
 
 ---
 layout: center
 ---
 
-<img src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=https://dw11.fish-rankine.ts.net" alt="">
-<p class="text-center font-bold">dw11.fish-rankine.ts.net</p>
+# Demo apky
+
+<CustomPlayer src="/demo.mp4" />
+
+---
+layout: center
+---
+
+<img src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=https://bio.psenaksk.dpdns.org" alt="">
+<p class="text-center font-bold">bio.psenaksk.dpdns.org</p>
 
 ---
 
@@ -307,11 +350,17 @@ layout: center
 - Všetko čo ide spraviť by
     1. museli spraviť samotné datacentrá
     2. bolo by buď veľmi drahé alebo neefektívne
-- Jediné riešenia ktoré existujú ktoré sú efektívnejšie (hlbokomorské datacentrá) sú peňažne drahé.
+- Jediné riešenia, ktoré existujú, ktoré sú efektívnejšie (hlbokomorské datacentrá) sú peňažne drahé.
 - Najjednoduchšie a najlacnejšie riešenie zo strany datacentier je využívať nepitnú vodu (niektoré to už robia)
-- Ako jednu z mála vecí čo vieme spraviť je minimalizovať využitie velkých AI na veci kde to nie je nutné
+- Ako jednu z mála vecí čo vieme spraviť je minimalizovať využitie veľkých AI na veci kde to nie je nutné
 
 </v-clicks>
+
+---
+
+# Výzvy pri robení projektu
+
+- časový management
 
 ---
 
@@ -322,3 +371,6 @@ layout: center
 - https://www.digitaltrends.com/phones/iphone-17-charging-speeds/
 - https://sk.factory-water-fountain-equipment.com/info/standard-dimensions-of-international-swimming-31829358.html
 - https://www.activesustainability.com/water/do-you-know-your-water-footprint-7-pieces-of-curious-data-about-water-usage
+- https://www.opb.org/article/2026/01/15/as-googles-water-demands-grow-the-dalles-aims-to-pull-more-from-mount-hood-forest/
+- https://sk.wikipedia.org/wiki/Bratislava_%E2%80%93_mestsk%C3%A1_%C4%8Das%C5%A5_Petr%C5%BEalka
+- https://sk.wikipedia.org/wiki/Bratislava_%E2%80%93_mestsk%C3%A1_%C4%8Das%C5%A5_Star%C3%A9_Mesto
