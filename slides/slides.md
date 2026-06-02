@@ -83,7 +83,7 @@ transition: slide-up
 # Ako funguje AI (veľmi zjednodušene)
 
 - Prvý krok je tzv. tokenizácia.
-- Tokenizácia je proces delenia textu na tzv. tokeny a číslovanie ich (čísluje ich lebo AI je v skutočnosti veľký matematický príklad)
+- Tokenizácia je proces delenia textu na tzv. tokeny a číslovanie ich (čísluje ich, lebo AI je v skutočnosti veľký matematický príklad)
 - Tokeny nie sú to isté ako slová
 
 ---
@@ -119,8 +119,8 @@ transition: slide-down
 layout: center
 ---
 
-<h1 class="text-center">Tento proces ale stojí vela energie*</h1>
-<p class="text-xs text-center">* podľa veľkosti modelu, pri modeloch, ako GPT-5.4 z ChatGPT stojí vela energie</p>
+<h1 class="text-center">Tento proces ale stojí veľa energie*</h1>
+<p class="text-xs text-center">* podľa veľkosti modelu, pri modeloch, ako GPT-5.4 z ChatGPT stojí veľa energie</p>
 
 ---
 
@@ -151,7 +151,7 @@ hideInToc: true
 - Voda sa používa na odvádzanie tepla, ktoré vzniká pri výpočtoch
 - Na meranie efektivity sa využíva veličina WUE (Water Usage Effectiveness), vypočítava sa vzorcom $WUE = \frac{Využitá \; voda}{Využitá \; energia}$
 
-![](/voda.png)
+<img src="/voda.png" class="mt-4 h-50" />
 
 ---
 
@@ -261,14 +261,18 @@ layout: center
 # Koľko vody to ale naozaj je?
 
 - Ako aplikačnú časť som urobil simuláciu
-- V simulácií chatujete s AI modelom (Gemma 3 4B) a počíta to dáta koľko by to spotrebovalo 
+- V simulácii chatujete s AI modelom (Gemma 3 4B) a počíta to dáta koľko by to spotrebovalo 
 - Potom tam bude štatistika porovnávajúca tvoj chat s inými vecami čo spotrebovávajú energiu a vodu.
+
+<!--
+Podľa neoficiálnych odhadov ChatGPT má asi 1 trilión parametrov (2500x väčšie), ale toto nie sú oficiálne zdroje
+-->
 
 ---
 
 # Plán projektu
 
-- Keďže apka je viacmenej robenie jednej veci,  
+- Keďže apka je viacmenej robenie jednej veci, bral som to ako jednu úlohu na ktorú som mal čas robiť keď mám slidy aspoň zväčša hotové.
 
 ---
 
@@ -295,12 +299,12 @@ layout: center
 
 # Koľko je jedno `ahoj!`
 
-- V našej simulácií spotrebuje 0.11 Wh energie, a 0,19 ml vody
+- V našej simulácii spotrebuje 0.11 Wh energie, a 0,19 ml vody
 - Pri 200 miliónoch používateľoch denne (približne koľko má ChatGPT) je to 38 480 l vody
 - To by pokrylo približne polovicu toho čo by vypili ľudia v Karlovej Vsi za deň
-- Priemerný slovák by si s touto vodou vystačil na rok aj s hygienou
+- Priemerný Slovák by si s touto vodou vystačil na rok aj s hygienou
 - Dali by sa s tým naplniť až 2 stredne veľké rodinné bazény (priemer asi 5m a hĺbku 1m)
-- Dali by sa uvariť 2 šálky kávy pre každého Petržálčana
+- Dali by sa uvariť 2 šálky kávy pre každého Petržalčana
 
 <!--
 Petržálka: 113000 obyvatelov
@@ -360,7 +364,8 @@ layout: center
 
 # Výzvy pri robení projektu
 
-- časový management
+- Časový management
+- Dostupnosť dát
 
 ---
 
@@ -374,3 +379,11 @@ layout: center
 - https://www.opb.org/article/2026/01/15/as-googles-water-demands-grow-the-dalles-aims-to-pull-more-from-mount-hood-forest/
 - https://sk.wikipedia.org/wiki/Bratislava_%E2%80%93_mestsk%C3%A1_%C4%8Das%C5%A5_Petr%C5%BEalka
 - https://sk.wikipedia.org/wiki/Bratislava_%E2%80%93_mestsk%C3%A1_%C4%8Das%C5%A5_Star%C3%A9_Mesto
+- https://sk.wikipedia.org/wiki/Bratislava_%E2%80%93_mestsk%C3%A1_%C4%8Das%C5%A5_Karlova_Ves
+
+---
+layout: center
+hideInToc: true
+---
+
+# Ďakujem za pozornosť

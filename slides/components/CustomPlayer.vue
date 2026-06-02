@@ -14,7 +14,7 @@ const videoRef = ref(null)
 let player = null
 
 // 🧠 THIS is the important part
-const base = import.meta.env.BASE_URL + "/"
+const base = import.meta.env.BASE_URL
 const resolvedSrc = computed(() => base + props.src.replace(/^\//, ''))
 
 onMounted(() => {
